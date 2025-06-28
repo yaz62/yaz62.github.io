@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yan Zhang</title>
-    <link>https://yaz62.github.io/</link>
-    <description>Recent content on Yan Zhang</description>
+    <title>Claude on Yan Zhang</title>
+    <link>https://yaz62.github.io/tags/claude/</link>
+    <description>Recent content in Claude on Yan Zhang</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yaz62.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yaz62.github.io/tags/claude/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prove That Meridians Are Geodescis With LLMs</title>
       <link>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</link>
