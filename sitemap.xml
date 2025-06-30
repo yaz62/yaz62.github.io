@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yaz62.github.io/tags/chatgpt/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/chatgpt/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/claude/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/claude/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/covariant-parallel/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/covariant-parallel/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/differential-geometry/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/differential-geometry/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/geodesic/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/geodesic/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/meridian/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/meridian/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/posts/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/prove-meridians-are-geodesics/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/</loc>
-    <lastmod>2025-06-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-06-29T22:05:42-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
