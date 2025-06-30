@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yan Zhang</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://yaz62.github.io/tags/</link>
     <description>Recent content in Tags on Yan Zhang</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Jun 2025 22:05:42 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jun 2025 10:18:43 -0700</lastBuildDate>
+    <atom:link href="https://yaz62.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chatgpt</title>
-      <link>http://localhost:1313/tags/chatgpt/</link>
+      <link>https://yaz62.github.io/tags/chatgpt/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/chatgpt/</guid>
+      <guid>https://yaz62.github.io/tags/chatgpt/</guid>
       <description></description>
     </item>
     <item>
       <title>Claude</title>
-      <link>http://localhost:1313/tags/claude/</link>
+      <link>https://yaz62.github.io/tags/claude/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/claude/</guid>
+      <guid>https://yaz62.github.io/tags/claude/</guid>
       <description></description>
     </item>
     <item>
       <title>Covariant Parallel</title>
-      <link>http://localhost:1313/tags/covariant-parallel/</link>
+      <link>https://yaz62.github.io/tags/covariant-parallel/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/covariant-parallel/</guid>
+      <guid>https://yaz62.github.io/tags/covariant-parallel/</guid>
       <description></description>
     </item>
     <item>
       <title>Differential Geometry</title>
-      <link>http://localhost:1313/tags/differential-geometry/</link>
+      <link>https://yaz62.github.io/tags/differential-geometry/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/differential-geometry/</guid>
+      <guid>https://yaz62.github.io/tags/differential-geometry/</guid>
       <description></description>
     </item>
     <item>
       <title>Geodesic</title>
-      <link>http://localhost:1313/tags/geodesic/</link>
+      <link>https://yaz62.github.io/tags/geodesic/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/geodesic/</guid>
+      <guid>https://yaz62.github.io/tags/geodesic/</guid>
       <description></description>
     </item>
     <item>
       <title>Meridian</title>
-      <link>http://localhost:1313/tags/meridian/</link>
+      <link>https://yaz62.github.io/tags/meridian/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/meridian/</guid>
+      <guid>https://yaz62.github.io/tags/meridian/</guid>
       <description></description>
     </item>
   </channel>
