@@ -9,11 +9,11 @@
     <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yaz62.github.io/tags/geodesic/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Prove That Meridians Are Geodescis With LLMs</title>
+      <title>Prove That Meridians Are Geodesics With LLMs</title>
       <link>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&amp;rsquo;s notes,&#xA;&lt;em&gt;Differential Geometry: A First Course in Curves and Surfaces&lt;/em&gt;, as the textbook. Recently I&amp;rsquo;ve decided to&#xA;pick it back up just for fun.&lt;/p&gt;&#xA;&lt;p&gt;In Chapter 2, after reading about Clairaut&amp;rsquo;s relation and trying to get an intuitive picture of it, it came&#xA;to me that the meridians of a surface of revolution should be always geodesics. This makes sense because &amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&amp;rsquo;s notes,&#xA;&lt;em&gt;Differential Geometry: A First Course in Curves and Surfaces&lt;/em&gt;, as my textbook. Recently, I decided to&#xA;pick it back up just for fun.&lt;/p&gt;&#xA;&lt;p&gt;In Chapter 2, after reading about Clairaut&amp;rsquo;s relation and trying to get an intuitive picture of it, it occurred&#xA;to me that the meridians of a surface of revolution should always be geodesics. This makes sense because the &amp;ldquo;terrain&amp;rdquo;&#xA;is symmetrical about the meridian, so if you are walking along the meridian, you are not going either left or right but straight.&#xA;But to show this formally, we need to use the mathematical definition of a geodesic, and I&amp;rsquo;ll use the one from the notes:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

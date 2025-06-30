@@ -3,7 +3,7 @@
 
 <head>
   <title>
-  Prove That Meridians Are Geodescis With LLMs · Yan Zhang
+  Prove That Meridians Are Geodesics With LLMs · Yan Zhang
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,24 +14,26 @@
 
 <meta name="author" content="Yan Zhang">
 <meta name="description" content="I&rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&rsquo;s notes,
-Differential Geometry: A First Course in Curves and Surfaces, as the textbook. Recently I&rsquo;ve decided to
+Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to
 pick it back up just for fun.
-In Chapter 2, after reading about Clairaut&rsquo;s relation and trying to get an intuitive picture of it, it came
-to me that the meridians of a surface of revolution should be always geodesics. This makes sense because &hellip;">
+In Chapter 2, after reading about Clairaut&rsquo;s relation and trying to get an intuitive picture of it, it occurred
+to me that the meridians of a surface of revolution should always be geodesics. This makes sense because the &ldquo;terrain&rdquo;
+is symmetrical about the meridian, so if you are walking along the meridian, you are not going either left or right but straight.
+But to show this formally, we need to use the mathematical definition of a geodesic, and I&rsquo;ll use the one from the notes:">
 <meta name="keywords" content="">
 
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Prove That Meridians Are Geodescis With LLMs">
-  <meta name="twitter:description" content="I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as the textbook. Recently I’ve decided to pick it back up just for fun.
-In Chapter 2, after reading about Clairaut’s relation and trying to get an intuitive picture of it, it came to me that the meridians of a surface of revolution should be always geodesics. This makes sense because …">
+  <meta name="twitter:title" content="Prove That Meridians Are Geodesics With LLMs">
+  <meta name="twitter:description" content="I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to pick it back up just for fun.
+In Chapter 2, after reading about Clairaut’s relation and trying to get an intuitive picture of it, it occurred to me that the meridians of a surface of revolution should always be geodesics. This makes sense because the “terrain” is symmetrical about the meridian, so if you are walking along the meridian, you are not going either left or right but straight. But to show this formally, we need to use the mathematical definition of a geodesic, and I’ll use the one from the notes:">
 
 <meta property="og:url" content="https://yaz62.github.io/posts/prove-meridians-are-geodesics/">
   <meta property="og:site_name" content="Yan Zhang">
-  <meta property="og:title" content="Prove That Meridians Are Geodescis With LLMs">
-  <meta property="og:description" content="I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as the textbook. Recently I’ve decided to pick it back up just for fun.
-In Chapter 2, after reading about Clairaut’s relation and trying to get an intuitive picture of it, it came to me that the meridians of a surface of revolution should be always geodesics. This makes sense because …">
+  <meta property="og:title" content="Prove That Meridians Are Geodesics With LLMs">
+  <meta property="og:description" content="I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to pick it back up just for fun.
+In Chapter 2, after reading about Clairaut’s relation and trying to get an intuitive picture of it, it occurred to me that the meridians of a surface of revolution should always be geodesics. This makes sense because the “terrain” is symmetrical about the meridian, so if you are walking along the meridian, you are not going either left or right but straight. But to show this formally, we need to use the mathematical definition of a geodesic, and I’ll use the one from the notes:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -89,6 +91,19 @@ In Chapter 2, after reading about Clairaut’s relation and trying to get an int
 
 
 
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -139,7 +154,7 @@ In Chapter 2, after reading about Clairaut’s relation and trying to get an int
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://yaz62.github.io/posts/prove-meridians-are-geodesics/">
-              Prove That Meridians Are Geodescis With LLMs
+              Prove That Meridians Are Geodesics With LLMs
             </a>
           </h1>
         </div>
@@ -153,7 +168,7 @@ In Chapter 2, after reading about Clairaut’s relation and trying to get an int
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              One-minute read
+              4-minute read
             </span>
           </div>
           
@@ -190,15 +205,82 @@ In Chapter 2, after reading about Clairaut’s relation and trying to get an int
       <div class="post-content">
         
         <p>I&rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&rsquo;s notes,
-<em>Differential Geometry: A First Course in Curves and Surfaces</em>, as the textbook. Recently I&rsquo;ve decided to
+<em>Differential Geometry: A First Course in Curves and Surfaces</em>, as my textbook. Recently, I decided to
 pick it back up just for fun.</p>
-<p>In Chapter 2, after reading about Clairaut&rsquo;s relation and trying to get an intuitive picture of it, it came
-to me that the meridians of a surface of revolution should be always geodesics. This makes sense because &hellip;</p>
-<p>A surface of revolution can be generally parametrized as:
+<p>In Chapter 2, after reading about Clairaut&rsquo;s relation and trying to get an intuitive picture of it, it occurred
+to me that the meridians of a surface of revolution should always be geodesics. This makes sense because the &ldquo;terrain&rdquo;
+is symmetrical about the meridian, so if you are walking along the meridian, you are not going either left or right but straight.
+But to show this formally, we need to use the mathematical definition of a geodesic, and I&rsquo;ll use the one from the notes:</p>
+<p><strong>Definition.</strong> We say a parametrized curve $\alpha$ in a surface M is a geodesic if its tangent vector is parallel along the curve,
+i.e., if $\nabla_{\alpha^\prime}\alpha^\prime=0.$</p>
+<p>To add some brief explanation: $\nabla$ is the covariant derivative, defined as the projection of the directional derivative onto the tangent space. So:
 $$
-x(u, v) = (f(u)\cos v, f(u)\sin v, g(u))
+\nabla_{\alpha^\prime}\alpha^\prime = \big(\mathrm D_{\alpha^\prime}\alpha^\prime\big)^\parallel
 $$
-where $f$ and $g$ are two arbitrary functions describing the curve that generates the surface by revolution.</p>
+The definition is essentially saying that geodesics are parallel transportation of its tangent vectors.</p>
+<p>Now, to show that meridians are in fact geodesics, first I parametrize an arbitrary surface of revolution as:
+$$
+x(u, v) = \big(f(u)\cos v, f(u)\sin v, g(u)\big)
+$$
+where $f$ and $g$ are two arbitrary functions describing the curve that generates the surface by revolution. Then,
+a meridian is simply a $u$-curve, namely, a curve that&rsquo;s parametrized only by $u$, at a constant $v=v_0$:
+$$
+\alpha(u) = \big(f(u)\cos v_0, f(u)\sin v_0, g(u)\big)
+$$
+To obtain the surface normal, I first calculate $x_u$ nad $x_v$ to get the two basis vectors for the tangent space:
+$$
+\begin{align*}
+x_u &amp;= \big(f^\prime(u)\cos v, f^\prime(u)\sin v, g^\prime(u)\big) \\[1.5ex]
+x_v &amp;= \big(-f(u)\sin v, f(u)\cos v, 0\big)
+\end{align*}
+$$
+Then take the cross-product:
+$$
+\begin{align*}
+\tilde n &amp;= x_u \times x_v \\[1.5ex]
+&amp;= \begin{vmatrix}
+i &amp; j &amp; k \\\
+f^\prime(u)\cos v &amp; f^\prime(u)\sin v &amp; g^\prime(u) \\\
+-f(u)\sin v &amp; f(u)\cos v &amp; 0
+\end{vmatrix} \\[1.5ex]
+&amp;= \big(-fg^\prime\cos v, -fg^\prime\sin v, f^\prime f\cos^2v + f^\prime f\sin^2v\big) \\[1.5ex]
+&amp;= f(-g^\prime\cos v, -g^\prime\sin v, f^\prime)
+\end{align*}
+$$
+The normalized surface normal is therefore:
+$$
+\begin{align*}
+n &amp;= \frac{\tilde n}{\lVert \tilde n \rVert}
+= \frac{f(-g^\prime\cos v, -g^\prime\sin v, f^\prime)}{\sqrt{f^2(g^{\prime 2} + f^{\prime 2})}} \\[1.5ex]
+&amp;= \frac{(-g^\prime\cos v, -g^\prime\sin v, f^\prime)}{\sqrt{(g^{\prime 2} + f^{\prime 2})}}
+\end{align*}
+$$</p>
+<p>Then I proceed to calculate the directional derivative of the tangent vector of the meridian in the direction of the tangent vector:
+$$
+\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u) = \alpha^{\prime\prime}(u)
+= \big(f^{\prime\prime}\cos v_0, f^{\prime\prime}\sin v_0, g^{\prime\prime}\big)
+$$
+To show that $\nabla_{\alpha^\prime(u)} \alpha^\prime(u) = 0$ is to show that the above directional derivative has only
+a normal component, which is to say that $\lVert\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert = \mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n$. Both sides can be easily computed from above results:
+$$
+\begin{align*}
+\lVert\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert &amp;= \lVert\alpha^{\prime\prime}(u)\rVert =
+\sqrt{f^{\prime\prime 2}\cos^2 v_0 + f^{\prime\prime 2}\sin^2 v_0 + g^{\prime\prime 2}} =
+\sqrt{f^{\prime\prime 2} + g^{\prime\prime 2}}\\[1.5ex]
+\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n &amp;=
+\frac{-f^{\prime\prime}g^\prime\cos^2 v - f^{\prime\prime}g^\prime\sin^2 v + f^\prime g^{\prime\prime}}{\sqrt{g^{\prime 2} + f^{\prime 2}}} = \frac{f^\prime g^{\prime\prime} - f^{\prime\prime}g^\prime}{\sqrt{g^{\prime 2} + f^{\prime 2}}}
+\end{align*}
+$$
+Now I&rsquo;m in trouble because clearly they are not always equal! Meridians should <em>always</em> be geodesics, but now the calculations
+say that $f(u)$ and $g(u)$ need to satisfy some condition for this to be the case. Naturally, I turn to ChatGPT for answers. First,
+under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
+<p><img src="gpt1.png" alt="My plot"></p>
+<p>To resolve the apparent paradox, ChatGPT says:</p>
+<p><img src="gpt2.png" alt="My plot"></p>
+<p>ChatGPT actually made a valid point on the arclength parametrization, which I will address later,
+but the three bullet points are utterly confusing to me. You can&rsquo;t say that &ldquo;$\alpha^{\prime\prime}(u)$ always equals its normal component only when the meridian is a geodesic&rdquo;, because (1) the claim is that meridians are <em>always</em> geodesics, and (2) we are trying to prove the claim by showing that $\alpha^{\prime\prime}$ always equals its normal component. I pointed out the confusing logic, but ChatGPT seems to be stuck in some loop, giving more and more confusing reasons, like such:</p>
+<p><img src="gpt3.png" alt="My plot"></p>
+<p>There&rsquo;s simply no way that $\alpha^{\prime\prime}$ lives in the 1D normal space and doesn&rsquo;t align with the unit surface normal. For some reason I didn&rsquo;t think of ChatGPT o4-mini, which is much better at reasoning, but instead I turned to Claude Sonnet 4, since many people have said good things about it.</p>
 
       </div>
 
