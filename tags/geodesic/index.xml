@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Geodesic on Yan Zhang</title>
-    <link>https://yaz62.github.io/tags/geodesic/</link>
+    <link>http://localhost:1313/tags/geodesic/</link>
     <description>Recent content in Geodesic on Yan Zhang</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Jul 2025 11:06:03 -0700</lastBuildDate>
-    <atom:link href="https://yaz62.github.io/tags/geodesic/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/geodesic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prove That Meridians Are Geodesics With LLMs</title>
-      <link>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</link>
+      <link>http://localhost:1313/posts/prove-meridians-are-geodesics/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tried to prove that meridians on a surface of revolution are always geodesics, but calculations suggested otherwise unless a certain condition was met.&lt;/li&gt;&#xA;&lt;li&gt;Consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue which led me to the answer&lt;/li&gt;&#xA;&lt;li&gt;The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization).&lt;/li&gt;&#xA;&lt;li&gt;Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic.&lt;/li&gt;&#xA;&lt;li&gt;The experience highlighted the importance of understanding the role of parametrization in the definition of geodesics.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&amp;rsquo;s notes,&#xA;&lt;em&gt;Differential Geometry: A First Course in Curves and Surfaces&lt;/em&gt;, as my textbook. Recently, I decided to&#xA;pick it back up just for fun.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/prove-meridians-are-geodesics/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tried to prove that meridians on a surface of revolution are always geodesics, but calculations suggested otherwise unless a certain condition was met.&lt;/li&gt;&#xA;&lt;li&gt;Consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue which led me to the answer&lt;/li&gt;&#xA;&lt;li&gt;The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization).&lt;/li&gt;&#xA;&lt;li&gt;Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic.&lt;/li&gt;&#xA;&lt;li&gt;The experience highlighted the importance of understanding the role of parametrization in the definition of geodesics.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&amp;rsquo;s notes, &lt;em&gt;Differential Geometry: A First Course in Curves and Surfaces&lt;/em&gt;, as my textbook. Recently, I decided to pick it back up just for fun.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

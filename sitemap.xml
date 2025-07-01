@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yaz62.github.io/tags/chatgpt/</loc>
+    <loc>http://localhost:1313/tags/chatgpt/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/claude/</loc>
+    <loc>http://localhost:1313/tags/claude/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/covariant-parallel/</loc>
+    <loc>http://localhost:1313/tags/covariant-parallel/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/differential-geometry/</loc>
+    <loc>http://localhost:1313/tags/differential-geometry/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/geodesic/</loc>
+    <loc>http://localhost:1313/tags/geodesic/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/meridian/</loc>
+    <loc>http://localhost:1313/tags/meridian/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</loc>
+    <loc>http://localhost:1313/posts/prove-meridians-are-geodesics/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-07-01T11:06:03-07:00</lastmod>
   </url><url>
-    <loc>https://yaz62.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
