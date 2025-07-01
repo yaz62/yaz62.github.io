@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <title>
   Prove That Meridians Are Geodesics With LLMs · Yan Zhang
 </title>
@@ -15,11 +15,11 @@
 <meta name="author" content="Yan Zhang">
 <meta name="description" content="TL;DR:
 
-Tried to prove that meridians on a surface of revolution are always geodesics, but calculations suggested otherwise unless a certain condition was met.
-Consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue which led me to the answer
+I tried to prove that meridians on a surface of revolution are always geodesics, but my calculations suggested otherwise unless a certain condition was met.
+I consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue that led me to the answer.
 The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization).
 Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic.
-The experience highlighted the importance of understanding the role of parametrization in the definition of geodesics.
+The collaborative exploration with LLMs brought more satisfaction than just getting the answer directly.
 
 I&rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&rsquo;s notes, Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to pick it back up just for fun.">
 <meta name="keywords" content="">
@@ -29,18 +29,18 @@ I&rsquo;ve learned bits of differential geometry over the years, and I always us
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Prove That Meridians Are Geodesics With LLMs">
   <meta name="twitter:description" content="TL;DR:
-Tried to prove that meridians on a surface of revolution are always geodesics, but calculations suggested otherwise unless a certain condition was met. Consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue which led me to the answer The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization). Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic. The experience highlighted the importance of understanding the role of parametrization in the definition of geodesics. I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to pick it back up just for fun.">
+I tried to prove that meridians on a surface of revolution are always geodesics, but my calculations suggested otherwise unless a certain condition was met. I consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue that led me to the answer. The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization). Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic. The collaborative exploration with LLMs brought more satisfaction than just getting the answer directly. I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to pick it back up just for fun.">
 
-<meta property="og:url" content="http://localhost:1313/posts/prove-meridians-are-geodesics/">
+<meta property="og:url" content="https://yaz62.github.io/posts/prove-meridians-are-geodesics/">
   <meta property="og:site_name" content="Yan Zhang">
   <meta property="og:title" content="Prove That Meridians Are Geodesics With LLMs">
   <meta property="og:description" content="TL;DR:
-Tried to prove that meridians on a surface of revolution are always geodesics, but calculations suggested otherwise unless a certain condition was met. Consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue which led me to the answer The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization). Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic. The experience highlighted the importance of understanding the role of parametrization in the definition of geodesics. I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to pick it back up just for fun.">
+I tried to prove that meridians on a surface of revolution are always geodesics, but my calculations suggested otherwise unless a certain condition was met. I consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue that led me to the answer. The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization). Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic. The collaborative exploration with LLMs brought more satisfaction than just getting the answer directly. I’ve learned bits of differential geometry over the years, and I always use Theodore Shifrin’s notes, Differential Geometry: A First Course in Curves and Surfaces, as my textbook. Recently, I decided to pick it back up just for fun.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-27T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-01T11:06:03-07:00">
+    <meta property="article:modified_time" content="2025-07-01T15:04:40-07:00">
     <meta property="article:tag" content="Differential Geometry">
     <meta property="article:tag" content="Meridian">
     <meta property="article:tag" content="Geodesic">
@@ -51,7 +51,7 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
 
 
 
-<link rel="canonical" href="http://localhost:1313/posts/prove-meridians-are-geodesics/">
+<link rel="canonical" href="https://yaz62.github.io/posts/prove-meridians-are-geodesics/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -61,7 +61,7 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
 
   
   
-  <link rel="stylesheet" href="/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.min.6445a802b9389c9660e1b07b724dcf5718b1065ed2d71b4eeaf981cc7cc5fc46.css" integrity="sha256-ZEWoArk4nJZg4bB7ck3PVxixBl7S1xtO6vmBzHzF/EY=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -93,6 +93,19 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
 
 
 
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -111,7 +124,7 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
+    <a class="navigation-title" href="https://yaz62.github.io/">
       Yan Zhang
     </a>
     
@@ -142,7 +155,7 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:1313/posts/prove-meridians-are-geodesics/">
+            <a class="title-link" href="https://yaz62.github.io/posts/prove-meridians-are-geodesics/">
               Prove That Meridians Are Geodesics With LLMs
             </a>
           </h1>
@@ -195,14 +208,14 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
         
         <p><strong>TL;DR:</strong></p>
 <ul>
-<li>Tried to prove that meridians on a surface of revolution are always geodesics, but calculations suggested otherwise unless a certain condition was met.</li>
-<li>Consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue which led me to the answer</li>
+<li>I tried to prove that meridians on a surface of revolution are always geodesics, but my calculations suggested otherwise unless a certain condition was met.</li>
+<li>I consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue that led me to the answer.</li>
 <li>The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization).</li>
 <li>Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic.</li>
-<li>The experience highlighted the importance of understanding the role of parametrization in the definition of geodesics.</li>
+<li>The collaborative exploration with LLMs brought more satisfaction than just getting the answer directly.</li>
 </ul>
 <p>I&rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&rsquo;s notes, <em>Differential Geometry: A First Course in Curves and Surfaces</em>, as my textbook. Recently, I decided to pick it back up just for fun.</p>
-<p>In Chapter 2, after reading about Clairaut&rsquo;s relation and trying to get an intuitive picture of it, it occurred to me that the meridians of a surface of revolution should always be geodesics. This makes sense because the &ldquo;terrain&rdquo; is symmetrical about the meridian, so if you are walking along the meridian, you are not going either left or right but straight. But to show this formally, we need to use the mathematical definition of a geodesic, and I&rsquo;ll use the one from the notes:</p>
+<p>In Chapter 2, after reading about Clairaut&rsquo;s relation and trying to get an intuitive picture of it, it occurred to me that the meridians of a surface of revolution should always be geodesics. This makes sense because the &ldquo;terrain&rdquo; is symmetrical about the meridian, so if you are walking along the meridian, you are not going either left or right, but straight ahead. But to show this formally, we need to use the mathematical definition of a geodesic, and I&rsquo;ll use the one from the notes:</p>
 <blockquote>
 <p><strong>Definition.</strong> We say a parametrized curve $\alpha$ in a surface $M$ is a geodesic if its tangent vector is parallel along the curve,
 i.e., if $\nabla_{\alpha^\prime}\alpha^\prime=0$.</p></blockquote>
@@ -210,30 +223,30 @@ i.e., if $\nabla_{\alpha^\prime}\alpha^\prime=0$.</p></blockquote>
 $$
 \nabla_{\alpha^\prime}\alpha^\prime = \big(D_{\alpha^\prime}\alpha^\prime\big)^\parallel
 $$
-The definition is essentially saying that geodesics are parallel transport of its tangent vectors. The geometrical relationship among relevant quantities are summarized in the following diagram:</p>
+The definition is essentially saying that geodesics are parallel transport of their tangent vectors. The geometrical relationships among the relevant quantities are summarized in the following diagram:</p>
 <p style="text-align: center;">
     <img src="diagram.png" alt="Diagram" style="width:60%;" />
 </p>
-<p>Then the recipe of the proof is quite straightforward:</p>
+<p>Then the recipe for the proof is quite straightforward:</p>
 <ul>
-<li>A parametrization of the surface of revolution $x(u, v)$;</li>
-<li>Calculate $x_u$ and $x_v$ as bases of the tangent plane;</li>
-<li>A parametrization of the meridian $\alpha$ on the surface, as function of $u$ and/or $v$;</li>
-<li>Calculate the directional derivative $D_{\alpha^\prime}\alpha^\prime$;</li>
-<li>Calculate the covariant derivative $\nabla_{\alpha^\prime}\alpha^\prime$ by projecting $D_{\alpha^\prime}\alpha^\prime$ onto the tangent plane;</li>
+<li>A parametrization of the surface of revolution $x(u, v)$.</li>
+<li>Calculate $x_u$ and $x_v$ as bases of the tangent plane.</li>
+<li>A parametrization of the meridian $\alpha$ on the surface, as a function of $u$ and/or $v$.</li>
+<li>Calculate the directional derivative $D_{\alpha^\prime}\alpha^\prime$.</li>
+<li>Calculate the covariant derivative $\nabla_{\alpha^\prime}\alpha^\prime$ by projecting $D_{\alpha^\prime}\alpha^\prime$ onto the tangent plane.</li>
 <li>Show that $\nabla_{\alpha^\prime}\alpha^\prime$ is always 0.</li>
 </ul>
-<p>The second to last step may sound simple, but usually involves Christoffel symbols which can be a quite a hassle. Instead, I decided to change the last two steps a bit to make the calculations easier:</p>
+<p>The second-to-last step may sound simple, but it usually involves Christoffel symbols, which can be quite a hassle. Instead, I decided to change the last two steps a bit to make the calculations easier:</p>
 <ul>
-<li>Calculate the unit surface normal from $x_u$ and $x_v$;</li>
-<li>Calculate the normal component of $D_{\alpha^\prime}\alpha^\prime$;</li>
+<li>Calculate the unit surface normal from $x_u$ and $x_v$.</li>
+<li>Calculate the normal component of $D_{\alpha^\prime}\alpha^\prime$.</li>
 <li>Show that the length of the normal component equals $\lVert D_{\alpha^\prime}\alpha^\prime \rVert$.</li>
 </ul>
-<p>So, the first step is parametrize an arbitrary surface of revolution as:
+<p>So, the first step is to parametrize an arbitrary surface of revolution as:
 $$
 x(u, v) = \big(f(u)\cos v, f(u)\sin v, g(u)\big)
 $$
-where $f$ and $g$ are two arbitrary functions describing the curve $\beta$ that generates the surface by revolution, and $v$ the angle of rotation:</p>
+where $f$ and $g$ are two arbitrary functions describing the curve $\beta$ that generates the surface by revolution, and $v$ is the angle of rotation:</p>
 <p style="text-align: center;">
     <img src="diagram_param.png" alt="Diagram" style="width:40%;" />
 </p>
@@ -241,14 +254,14 @@ where $f$ and $g$ are two arbitrary functions describing the curve $\beta$ that 
 $$
 \alpha(u) = \big(f(u)\cos v_0, f(u)\sin v_0, g(u)\big)
 $$
-To obtain the surface normal, I first calculate $x_u$ nad $x_v$ to get the two basis vectors for the tangent space:
+To obtain the surface normal, I first calculate $x_u$ and $x_v$ to get the two basis vectors for the tangent space:
 $$
 \begin{align*}
 x_u &amp;= \big(f^\prime(u)\cos v, f^\prime(u)\sin v, g^\prime(u)\big) \\[1.5ex]
 x_v &amp;= \big(-f(u)\sin v, f(u)\cos v, 0\big)
 \end{align*}
 $$
-Then take the cross-product:
+Then, take the cross product:
 $$
 \begin{align*}
 \tilde n &amp;= x_u \times x_v \\\
@@ -269,13 +282,13 @@ n &amp;= \frac{\tilde n}{\lVert \tilde n \rVert}
 &amp;= \frac{(-g^\prime\cos v, -g^\prime\sin v, f^\prime)}{\sqrt{(g^{\prime 2} + f^{\prime 2})}}
 \end{align*}
 $$</p>
-<p>Then I proceed to calculate the directional derivative of the tangent vector of the meridian in the direction of the tangent vector:
+<p>Then, I proceed to calculate the directional derivative of the tangent vector of the meridian in the direction of the tangent vector:
 $$
 D_{\alpha^\prime(u)} \alpha^\prime(u) = \alpha^{\prime\prime}(u)
 = \big(f^{\prime\prime}\cos v_0, f^{\prime\prime}\sin v_0, g^{\prime\prime}\big)
 $$
 To show that $\nabla_{\alpha^\prime(u)} \alpha^\prime(u) = 0$ is to show that the above directional derivative has only
-a normal component, which is to say that $\lVert D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert = D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n$. Both sides can be easily computed from above results:
+a normal component, which is to say that $\lVert D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert = D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n$. Both sides can be easily computed from the above results:
 $$
 \begin{align*}
 \lVert D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert &amp;= \lVert\alpha^{\prime\prime}(u)\rVert =
@@ -285,19 +298,19 @@ D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n &amp;=
 \frac{-f^{\prime\prime}g^\prime\cos^2 v - f^{\prime\prime}g^\prime\sin^2 v + f^\prime g^{\prime\prime}}{\sqrt{g^{\prime 2} + f^{\prime 2}}} = \frac{f^\prime g^{\prime\prime} - f^{\prime\prime}g^\prime}{\sqrt{g^{\prime 2} + f^{\prime 2}}}
 \end{align*}
 $$
-Now I&rsquo;m in trouble because clearly they are not always equal! Meridians should <em>always</em> be geodesics, but now the calculations
-say that $f(u)$ and $g(u)$ need to satisfy some condition for this to be the case. Naturally, I turn to ChatGPT for answers. First,
+Now I&rsquo;m in trouble, because clearly they are not always equal! Meridians should <em>always</em> be geodesics, but now the calculations
+say that $f(u)$ and $g(u)$ need to satisfy some condition for this to be the case. Naturally, I turned to ChatGPT for answers. First,
 under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
 <p><img src="gpt1.png" alt="My plot"></p>
-<p>To resolve the apparent paradox, ChatGPT says:</p>
+<p>To resolve the apparent paradox, ChatGPT said:</p>
 <p><img src="gpt2.png" alt="My plot"></p>
-<p>ChatGPT actually made a valid point on the arclength parametrization, which I will address later, but the three bullet points are utterly confusing to me. You can&rsquo;t say that &ldquo;$\alpha^{\prime\prime}(u)$ always equals its normal component only when the meridian is a geodesic&rdquo;, because (1) the claim is that meridians are <em>always</em> geodesics, and (2) we are trying to prove the claim by showing that $\alpha^{\prime\prime}$ always equals its normal component. I pointed out the confusing logic, but ChatGPT seems to be stuck in some loop, giving more and more confusing reasons, like such:</p>
+<p>ChatGPT actually made a valid point about arclength parametrization, which I will address later, but the three bullet points were utterly confusing to me. You can&rsquo;t say that &ldquo;$\alpha^{\prime\prime}(u)$ always equals its normal component only when the meridian is a geodesic,&rdquo; because (1) the claim is that meridians are <em>always</em> geodesics, and (2) we are trying to prove the claim by showing that $\alpha^{\prime\prime}$ always equals its normal component. I pointed out the confusing logic, but ChatGPT seemed to be stuck in some loop, giving more and more confusing reasons, like this:</p>
 <p><img src="gpt3.png" alt="My plot"></p>
-<p>There&rsquo;s simply no way that $\alpha^{\prime\prime}$ lives in the 1D normal space and doesn&rsquo;t align with the unit surface normal. For some reason I didn&rsquo;t think of ChatGPT o4-mini, which is much better at reasoning, but instead I turned to Claude Sonnet 4, since many people have said good things about it. At first, Claude tried to show that the covariant derivative is zero:</p>
+<p>There&rsquo;s simply no way that $\alpha^{\prime\prime}$ lives in the 1D normal space and doesn&rsquo;t align with the unit surface normal. For some reason, I didn&rsquo;t think of ChatGPT o4-mini, which is much better at reasoning, but instead I turned to Claude Sonnet 4, since many people have said good things about it. At first, Claude tried to show that the covariant derivative is zero:</p>
 <p style="text-align: center;">
     <img src="claude1.png" alt="Diagram" style="width:80%;" />
 </p>
-<p>So it seemed to be using the same circular logic that ChatGPT used, that &ldquo;the covariant derivative is zero because it should be zero for geodesics&rdquo;, which totally defeats the purpose of the proof. Here&rsquo;s how the conversation unfolds after I pointed out the obviously flawed reasoning:</p>
+<p>So it seemed to be using the same circular logic that ChatGPT used, that &ldquo;the covariant derivative is zero because it should be zero for geodesics,&rdquo; which totally defeats the purpose of the proof. Here&rsquo;s how the conversation unfolded after I pointed out the obviously flawed reasoning:</p>
 <p style="text-align: center;">
     <img src="claude2.png" alt="Diagram" style="width:80%;" />
 </p>
@@ -313,30 +326,30 @@ under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
 <p style="text-align: center;">
     <img src="claude6.png" alt="Diagram" style="width:80%;" />
 </p>
-<p>In short, Claude realized that there&rsquo;s inconsistency somewhere along the line, and it admitted that it didn&rsquo;t know exactly what it is. Personally, I found this conversation more pleasant than the one I had with ChatGPT 4o, but this is a topic for later. The turning point happened in the next exchange:</p>
+<p>In short, Claude realized that there was an inconsistency somewhere along the line, and it admitted that it didn&rsquo;t know exactly what it was. Personally, I found this conversation more pleasant than the one I had with ChatGPT 4o, but this is a topic for later. The turning point happened in the next exchange:</p>
 <p style="text-align: center;">
     <img src="claude7.png" alt="Diagram" style="width:80%;" />
 </p>
 <p style="text-align: center;">
     <img src="claude8.png" alt="Diagram" style="width:80%;" />
 </p>
-<p>Claude insightfully pointed out that the equation actually implied that the parametrization should have constant speed, which is the mysterious condition we were both missing! I knew this must be the answer, but, it&rsquo;s still not completely satisfying for me just yet. For one, nowhere in the above <strong>definition</strong> mentioned that the curve should be arclength or affine parametrized. Second, if, geometrically speaking, a meridian is always a geodesic, shouldn&rsquo;t it satisfy the definition of a geodesic no matter the parametrization? In response to my questions, Claude amusingly backed down from its conclusion and thought it made some algebraic error:</p>
+<p>Claude insightfully pointed out that the equation actually implied that the parametrization should have constant speed, which is the mysterious condition we were both missing! I knew this must be the answer, but it&rsquo;s still not completely satisfying for me just yet. For one, nowhere in the above <strong>definition</strong> does it mention that the curve should be arclength or affine parametrized. Second, if, geometrically speaking, a meridian is always a geodesic, shouldn&rsquo;t it satisfy the definition of a geodesic no matter the parametrization? In response to my questions, Claude amusingly backed down from its conclusion and thought it had made some algebraic error:</p>
 <p style="text-align: center;">
     <img src="claude9.png" alt="Diagram" style="width:80%;" />
 </p>
-<p>Since it seemed like Claude became confused again, I thought of ChatGPT o4-mini which is better at reasoning. Indeed, it confirmed that the curve needs to be affine parametrized, i.e. having constant speed, and offered some additional insights:</p>
+<p>Since it seemed like Claude became confused again, I thought of ChatGPT o4-mini, which is better at reasoning. Indeed, it confirmed that the curve needs to be affine parametrized, i.e., have constant speed, and offered some additional insights:</p>
 <p style="text-align: center;">
     <img src="gpt4.png" alt="Diagram" style="width:80%;" />
 </p>
-<p>Now it started to make sense to me: parametrization not only controls the shape of the curve, but also how an object moves along the curve. The directional derivative of the tangent vector is the acceleration, so even along a geodesic it can have a tangential component, if the object is accelerating! Furthermore, since parallel transport, defined by a vanished covariant derivative, is <em>length preserving</em>, the length of the tangent vector has to remain constant, which is exactly the condition Claude got from solving $\nabla_{\alpha^\prime}\alpha^\prime=0$. So, the <strong>definition</strong> is somewhat misleading, in that the tangent vector is not just <em>parallel</em> along the curve, but it&rsquo;s <em>parallel-transported</em>. Embarrasingly, after reading the notes a bit more carefully, I found the following text underneath the definition, only half centimeter away:</p>
+<p>Now it started to make sense to me: parametrization not only controls the shape of the curve, but also how an object moves along the curve. The directional derivative of the tangent vector is the acceleration, so even along a geodesic it can have a tangential component if the object is accelerating! Furthermore, since parallel transport, defined by a vanished covariant derivative, is <em>length preserving</em>, the length of the tangent vector has to remain constant, which is exactly the condition Claude got from solving $\nabla_{\alpha^\prime}\alpha^\prime=0$. So, the <strong>definition</strong> is somewhat misleading, in that the tangent vector is not just <em>parallel</em> along the curve, but it&rsquo;s <em>parallel-transported</em>. Embarrassingly, after reading the notes a bit more carefully, I found the following text underneath the definition, only half a centimeter away:</p>
 <blockquote>
-<p>Recall that since aprallel translation preserves lengths, $\alpha$ must have constant speed, although it may not be arclength-parametrized. In general, we refer to an unparametrized curve as a geodesic if its arclength parametrization is in fact a geodesic.</p></blockquote>
-<p>I explained what I &ldquo;discovered&rdquo; to Claude and it nicely summarized everything:</p>
+<p>Recall that since parallel translation preserves lengths, $\alpha$ must have constant speed, although it may not be arclength-parametrized. In general, we refer to an unparametrized curve as a geodesic if its arclength parametrization is in fact a geodesic.</p></blockquote>
+<p>I explained what I &ldquo;discovered&rdquo; to Claude, and it nicely summarized everything:</p>
 <p style="text-align: center;">
     <img src="claude10.png" alt="Diagram" style="width:80%;" />
 </p>
 <p>It is amazing to me how working out a simple proof led to a journey of discovering a missing part in my knowledge, which in the end also deepened my understanding of the relationship between geodesics and parallel transport. The fact that the constant speed condition emerges naturally from the parallel transport requirement really ties everything together elegantly.</p>
-<p>What&rsquo;s more amazing to me is the role of LLMs. ChatGPT 4o did mention arclength parametrization at first, but it didn&rsquo;t show this is the key to the puzzle, and instead gave me some hand waving explanations. Claude failed to provide the answer too, and got the same confusion as I did, but still played the role of a &ldquo;math buddy&rdquo; exploring the problem with me. It noticed the algebraic connection of the equation to constant speed, which eventually became our &ldquo;eureka!&rdquo; moment. This experience of collaborative exploration brought more Dopamine than the answer itself. Of course, if I used ChatGPT o4-mini at the first place, I may save a few hours, but I think it will be way less fun.</p>
+<p>What&rsquo;s more amazing to me is the role of LLMs. ChatGPT 4o did mention arclength parametrization at first, but it didn&rsquo;t show this was the key to the puzzle, and instead gave me some hand-waving explanations. Claude failed to provide the answer too, and got the same confusion as I did, but still played the role of a &ldquo;math buddy&rdquo; exploring the problem with me. It noticed the algebraic connection of the equation to constant speed, which eventually became our &ldquo;eureka!&rdquo; moment. This experience of collaborative exploration brought more dopamine than the answer itself. Of course, if I had used ChatGPT o4-mini in the first place, I might have saved a few hours, but I think it would have been way less fun.</p>
 
       </div>
 
@@ -395,7 +408,7 @@ under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
 
   
   
-  <script src="/js/coder.js"></script>
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   
