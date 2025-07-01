@@ -42,7 +42,7 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-27T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-06-30T10:18:43-07:00">
+    <meta property="article:modified_time" content="2025-07-01T11:06:03-07:00">
     <meta property="article:tag" content="Differential Geometry">
     <meta property="article:tag" content="Meridian">
     <meta property="article:tag" content="Geodesic">
@@ -95,19 +95,6 @@ Tried to prove that meridians on a surface of revolution are always geodesics, b
 
 
 
-
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -172,7 +159,7 @@ window.MathJax = {
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              6-minute read
+              8-minute read
             </span>
           </div>
           
@@ -226,12 +213,30 @@ But to show this formally, we need to use the mathematical definition of a geode
 <blockquote>
 <p><strong>Definition.</strong> We say a parametrized curve $\alpha$ in a surface M is a geodesic if its tangent vector is parallel along the curve,
 i.e., if $\nabla_{\alpha^\prime}\alpha^\prime=0$.</p></blockquote>
-<p>To add some brief explanation: $\nabla$ is the covariant derivative, defined as the projection of the directional derivative onto the tangent space. So:
+<p>To add some brief explanation: $\nabla$ is the covariant derivative, defined as the projection of the directional derivative onto the tangent space:
 $$
-\nabla_{\alpha^\prime}\alpha^\prime = \big(\mathrm D_{\alpha^\prime}\alpha^\prime\big)^\parallel
+\nabla_{\alpha^\prime}\alpha^\prime = \big(D_{\alpha^\prime}\alpha^\prime\big)^\parallel
 $$
-The definition is essentially saying that geodesics are parallel transport of its tangent vectors.</p>
-<p>Now, to show that meridians are in fact geodesics, first I parametrize an arbitrary surface of revolution as:
+The definition is essentially saying that geodesics are parallel transport of its tangent vectors. The geometrical relationship among relevant quantities are summarized in the following diagram:</p>
+<p style="text-align: center;">
+    <img src="diagram.png" alt="Diagram" style="width:60%;" />
+</p>
+<p>Then the recipe of the proof is quite straightforward:</p>
+<ul>
+<li>A parametrization of the surface of revolution $x(u, v)$;</li>
+<li>Calculate $x_u$ and $x_v$ as bases of the tangent plane;</li>
+<li>A parametrization of the meridian $\alpha$ on the surface, as function of $u$ and/or $v$;</li>
+<li>Calculate the directional derivative $D_{\alpha^\prime}\alpha^\prime$;</li>
+<li>Calculate the covariant derivative $\nabla_{\alpha^\prime}\alpha^\prime$ by projecting $D_{\alpha^\prime}\alpha^\prime$ onto the tangent plane;</li>
+<li>Show that $\nabla_{\alpha^\prime}\alpha^\prime$ is always 0.</li>
+</ul>
+<p>The second to last step may sound simple, but usually involves Christoffel symbols which can be a quite a hassle. Instead, I decided to change the last two steps a bit to make the calculations easier:</p>
+<ul>
+<li>Calculate the unit surface normal from $x_u$ and $x_v$;</li>
+<li>Calculate the normal component of $D_{\alpha^\prime}\alpha^\prime$;</li>
+<li>Show that the length of the normal component equals $\lVert D_{\alpha^\prime}\alpha^\prime \rVert$.</li>
+</ul>
+<p>So, the first step is parametrize an arbitrary surface of revolution as:
 $$
 x(u, v) = \big(f(u)\cos v, f(u)\sin v, g(u)\big)
 $$
@@ -250,13 +255,13 @@ $$
 Then take the cross-product:
 $$
 \begin{align*}
-\tilde n &amp;= x_u \times x_v \\[1.5ex]
+\tilde n &amp;= x_u \times x_v \\\
 &amp;= \begin{vmatrix}
 i &amp; j &amp; k \\\
 f^\prime(u)\cos v &amp; f^\prime(u)\sin v &amp; g^\prime(u) \\\
--f(u)\sin v &amp; f(u)\cos v &amp; 0
-\end{vmatrix} \\[1.5ex]
-&amp;= \big(-fg^\prime\cos v, -fg^\prime\sin v, f^\prime f\cos^2v + f^\prime f\sin^2v\big) \\[1.5ex]
+-f(u)\sin v &amp; f(u)\cos v &amp; 0 \\[2ex]
+\end{vmatrix} \\\
+&amp;= \big(-fg^\prime\cos v, -fg^\prime\sin v, f^\prime f\cos^2v + f^\prime f\sin^2v\big) \\\
 &amp;= f(-g^\prime\cos v, -g^\prime\sin v, f^\prime)
 \end{align*}
 $$
@@ -264,23 +269,23 @@ The normalized surface normal is therefore:
 $$
 \begin{align*}
 n &amp;= \frac{\tilde n}{\lVert \tilde n \rVert}
-= \frac{f(-g^\prime\cos v, -g^\prime\sin v, f^\prime)}{\sqrt{f^2(g^{\prime 2} + f^{\prime 2})}} \\[1.5ex]
+= \frac{f(-g^\prime\cos v, -g^\prime\sin v, f^\prime)}{\sqrt{f^2(g^{\prime 2} + f^{\prime 2})}} \\[3ex]
 &amp;= \frac{(-g^\prime\cos v, -g^\prime\sin v, f^\prime)}{\sqrt{(g^{\prime 2} + f^{\prime 2})}}
 \end{align*}
 $$</p>
 <p>Then I proceed to calculate the directional derivative of the tangent vector of the meridian in the direction of the tangent vector:
 $$
-\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u) = \alpha^{\prime\prime}(u)
+D_{\alpha^\prime(u)} \alpha^\prime(u) = \alpha^{\prime\prime}(u)
 = \big(f^{\prime\prime}\cos v_0, f^{\prime\prime}\sin v_0, g^{\prime\prime}\big)
 $$
 To show that $\nabla_{\alpha^\prime(u)} \alpha^\prime(u) = 0$ is to show that the above directional derivative has only
-a normal component, which is to say that $\lVert\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert = \mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n$. Both sides can be easily computed from above results:
+a normal component, which is to say that $\lVert D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert = D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n$. Both sides can be easily computed from above results:
 $$
 \begin{align*}
-\lVert\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert &amp;= \lVert\alpha^{\prime\prime}(u)\rVert =
+\lVert D_{\alpha^\prime(u)} \alpha^\prime(u)\rVert &amp;= \lVert\alpha^{\prime\prime}(u)\rVert =
 \sqrt{f^{\prime\prime 2}\cos^2 v_0 + f^{\prime\prime 2}\sin^2 v_0 + g^{\prime\prime 2}} =
-\sqrt{f^{\prime\prime 2} + g^{\prime\prime 2}}\\[1.5ex]
-\mathrm D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n &amp;=
+\sqrt{f^{\prime\prime 2} + g^{\prime\prime 2}}\\[3ex]
+D_{\alpha^\prime(u)} \alpha^\prime(u)\cdot n &amp;=
 \frac{-f^{\prime\prime}g^\prime\cos^2 v - f^{\prime\prime}g^\prime\sin^2 v + f^\prime g^{\prime\prime}}{\sqrt{g^{\prime 2} + f^{\prime 2}}} = \frac{f^\prime g^{\prime\prime} - f^{\prime\prime}g^\prime}{\sqrt{g^{\prime 2} + f^{\prime 2}}}
 \end{align*}
 $$
@@ -294,26 +299,49 @@ under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
 but the three bullet points are utterly confusing to me. You can&rsquo;t say that &ldquo;$\alpha^{\prime\prime}(u)$ always equals its normal component only when the meridian is a geodesic&rdquo;, because (1) the claim is that meridians are <em>always</em> geodesics, and (2) we are trying to prove the claim by showing that $\alpha^{\prime\prime}$ always equals its normal component. I pointed out the confusing logic, but ChatGPT seems to be stuck in some loop, giving more and more confusing reasons, like such:</p>
 <p><img src="gpt3.png" alt="My plot"></p>
 <p>There&rsquo;s simply no way that $\alpha^{\prime\prime}$ lives in the 1D normal space and doesn&rsquo;t align with the unit surface normal. For some reason I didn&rsquo;t think of ChatGPT o4-mini, which is much better at reasoning, but instead I turned to Claude Sonnet 4, since many people have said good things about it. At first, Claude tried to show that the covariant derivative is zero:</p>
-<img src="claude1.png" alt="Diagram" style="width:80%;" />
+<p style="text-align: center;">
+    <img src="claude1.png" alt="Diagram" style="width:80%;" />
+</p>
 <p>So it seemed to be using the same circular logic that ChatGPT used, that &ldquo;the covariant derivative is zero because it should be zero for geodesics&rdquo;, which totally defeats the purpose of the proof. Here&rsquo;s how the conversation unfolds after I pointed out the obviously flawed reasoning:</p>
-<img src="claude2.png" alt="Diagram" style="width:80%;" />
-<img src="claude3.png" alt="Diagram" style="width:80%;" />
-<img src="claude4.png" alt="Diagram" style="width:80%;" />
-<img src="claude5.png" alt="Diagram" style="width:80%;" />
-<img src="claude6.png" alt="Diagram" style="width:80%;" />
+<p style="text-align: center;">
+    <img src="claude2.png" alt="Diagram" style="width:80%;" />
+</p>
+<p style="text-align: center;">
+    <img src="claude3.png" alt="Diagram" style="width:80%;" />
+</p>
+<p style="text-align: center;">
+    <img src="claude4.png" alt="Diagram" style="width:80%;" />
+</p>
+<p style="text-align: center;">
+    <img src="claude5.png" alt="Diagram" style="width:80%;" />
+</p>
+<p style="text-align: center;">
+    <img src="claude6.png" alt="Diagram" style="width:80%;" />
+</p>
 <p>In short, Claude realized that there&rsquo;s inconsistency somewhere along the line, and it admitted that it didn&rsquo;t know exactly what it is. Personally, I found this conversation more pleasant than the one I had with ChatGPT 4o, but this is a topic for later. The turning point happened in the next exchange:</p>
-<img src="claude7.png" alt="Diagram" style="width:80%;" />
-<img src="claude8.png" alt="Diagram" style="width:80%;" />
+<p style="text-align: center;">
+    <img src="claude7.png" alt="Diagram" style="width:80%;" />
+</p>
+<p style="text-align: center;">
+    <img src="claude8.png" alt="Diagram" style="width:80%;" />
+</p>
 <p>Claude insightfully pointed out that the equation actually implied that the parametrization should have constant speed, which is the mysterious condition we were both missing! I knew this must be the answer, but, it&rsquo;s still not completely satisfying for me just yet. For one, nowhere in the above <strong>definition</strong> mentioned that the curve should be arclength or affine parametrized. Second, if, geometrically speaking, a meridian is always a geodesic, shouldn&rsquo;t it satisfy the definition of a geodesic no matter the parametrization? In response to my questions, Claude amusingly backed down from its conclusion and thought it made some algebraic error:</p>
-<img src="claude9.png" alt="Diagram" style="width:80%;" />
+<p style="text-align: center;">
+    <img src="claude9.png" alt="Diagram" style="width:80%;" />
+</p>
 <p>Since it seemed like Claude became confused again, I thought of ChatGPT o4-mini which is better at reasoning. Indeed, it confirmed that the curve needs to be affine parametrized, i.e. having constant speed, and offered some additional insights:</p>
-<img src="gpt4.png" alt="Diagram" style="width:80%;" />
+<p style="text-align: center;">
+    <img src="gpt4.png" alt="Diagram" style="width:80%;" />
+</p>
 <p>Now it started to make sense to me: parametrization not only controls the shape of the curve, but also how an object moves along the curve. The directional derivative of the tangent vector is the acceleration, so even along a geodesic it can have a tangential component, if the object is accelerating! Furthermore, since parallel transport, defined by a vanished covariant derivative, is <em>length preserving</em>, the length of the tangent vector has to remain constant, which is exactly the condition Claude got from solving $\nabla_{\alpha^\prime}\alpha^\prime=0$. So, the <strong>definition</strong> is somewhat misleading, in that the tangent vector is not just <em>parallel</em> along the curve, but it&rsquo;s <em>parallel-transported</em>. Embarrasingly, after reading the notes a bit more carefully, I found the following text underneath the definition, only half centimeter away:</p>
 <blockquote>
 <p>Recall that since aprallel translation preserves lengths, $\alpha$ must have constant speed, although it may not be arclength-parametrized. In general, we refer to an unparametrized curve as a geodesic if its arclength parametrization is in fact a geodesic.</p></blockquote>
 <p>I explained what I &ldquo;discovered&rdquo; to Claude and it nicely summarized everything:</p>
-<img src="claude10.png" alt="Diagram" style="width:80%;" />
-<img src="claude11.png" alt="Diagram" style="width:80%;" />
+<p style="text-align: center;">
+    <img src="claude10.png" alt="Diagram" style="width:80%;" />
+</p>
+<p>It is amazing to me how working out a simple proof led to a journey of discovering a missing part in my knowledge, which in the end also deepened my understanding of the relationship between geodesics and parallel transport. The fact that the constant speed condition emerges naturally from the parallel transport requirement really ties everything together elegantly.</p>
+<p>What&rsquo;s more amazing to me is the role of LLMs. ChatGPT 4o did mention arclength parametrization at first, but it didn&rsquo;t show this is the key to the puzzle, and instead gave me some hand waving explanations. Claude failed to provide the answer too, and got the same confusion as I did, but still played the role of a &ldquo;math buddy&rdquo; exploring the problem with me. It noticed the algebraic connection of the equation to constant speed, which eventually became our &ldquo;eureka!&rdquo; moment. This experience of collaborative exploration brought more Dopamine than the answer itself. Of course, if I used ChatGPT o4-mini at the first place, I may save a few hours, but I think it will be way less fun.</p>
 
       </div>
 
