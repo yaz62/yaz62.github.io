@@ -40,7 +40,7 @@ I tried to prove that meridians on a surface of revolution are always geodesics,
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-27T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-01T15:07:12-07:00">
+    <meta property="article:modified_time" content="2025-07-01T15:26:49-07:00">
     <meta property="article:tag" content="Differential Geometry">
     <meta property="article:tag" content="Meridian">
     <meta property="article:tag" content="Geodesic">
@@ -306,11 +306,11 @@ under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
 <p><img src="gpt2.png" alt="My plot"></p>
 <p>ChatGPT actually made a valid point about arclength parametrization, which I will address later, but the three bullet points were utterly confusing to me. You can&rsquo;t say that &ldquo;$\alpha^{\prime\prime}(u)$ always equals its normal component only when the meridian is a geodesic,&rdquo; because (1) the claim is that meridians are <em>always</em> geodesics, and (2) we are trying to prove the claim by showing that $\alpha^{\prime\prime}$ always equals its normal component. I pointed out the confusing logic, but ChatGPT seemed to be stuck in some loop, giving more and more confusing reasons, like this:</p>
 <p><img src="gpt3.png" alt="My plot"></p>
-<p>There&rsquo;s simply no way that $\alpha^{\prime\prime}$ lives in the 1D normal space and doesn&rsquo;t align with the unit surface normal. For some reason, I didn&rsquo;t think of ChatGPT o4-mini, which is much better at reasoning, but instead I turned to Claude Sonnet 4, since many people have said good things about it. At first, Claude tried to show that the covariant derivative is zero:</p>
+<p>There&rsquo;s simply no way that $\alpha^{\prime\prime}$ doesn&rsquo;t align with the unit surface normal, because the normal space is 1D! For some reason, I didn&rsquo;t think of ChatGPT o4-mini, which is much better at reasoning, but instead I turned to Claude Sonnet 4, since many people have said good things about it. Here&rsquo;s the conclusion Claude arrived at initially:</p>
 <p style="text-align: center;">
     <img src="claude1.png" alt="Diagram" style="width:80%;" />
 </p>
-<p>So it seemed to be using the same circular logic that ChatGPT used, that &ldquo;the covariant derivative is zero because it should be zero for geodesics,&rdquo; which totally defeats the purpose of the proof. Here&rsquo;s how the conversation unfolded after I pointed out the obviously flawed reasoning:</p>
+<p>It seemed to be using the same circular logic that ChatGPT used, that &ldquo;the covariant derivative is zero because it should be zero for geodesics,&rdquo; which totally defeats the purpose of the proof. Here&rsquo;s how the conversation unfolded after I pointed out the obviously flawed reasoning:</p>
 <p style="text-align: center;">
     <img src="claude2.png" alt="Diagram" style="width:80%;" />
 </p>
@@ -341,7 +341,7 @@ under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
 <p style="text-align: center;">
     <img src="gpt4.png" alt="Diagram" style="width:80%;" />
 </p>
-<p>Now it started to make sense to me: parametrization not only controls the shape of the curve, but also how an object moves along the curve. The directional derivative of the tangent vector is the acceleration, so even along a geodesic it can have a tangential component if the object is accelerating! Furthermore, since parallel transport, defined by a vanished covariant derivative, is <em>length preserving</em>, the length of the tangent vector has to remain constant, which is exactly the condition Claude got from solving $\nabla_{\alpha^\prime}\alpha^\prime=0$. So, the <strong>definition</strong> is somewhat misleading, in that the tangent vector is not just <em>parallel</em> along the curve, but it&rsquo;s <em>parallel-transported</em>. Embarrassingly, after reading the notes a bit more carefully, I found the following text underneath the definition, only half a centimeter away:</p>
+<p>Now it started to make sense to me: parametrization not only controls the shape of the curve, but also how an object moves along the curve. The directional derivative of the tangent vector is the acceleration, so even along a geodesic it can have a tangential component if the object is accelerating! Furthermore, since parallel transport, defined by a vanished covariant derivative, is <em>length preserving</em>, the length of the transported tangent vector of the meridian has to remain constant, which is exactly the condition Claude got from solving $\nabla_{\alpha^\prime}\alpha^\prime=0$. So, the <strong>definition</strong> is somewhat misleading, in that the tangent vector of the meridian is not just <em>parallel</em> along the curve, but it&rsquo;s <em>parallel-transported</em>. Embarrassingly, after reading the notes a bit more carefully, I found the following text underneath the definition, only half a centimeter away:</p>
 <blockquote>
 <p>Recall that since parallel translation preserves lengths, $\alpha$ must have constant speed, although it may not be arclength-parametrized. In general, we refer to an unparametrized curve as a geodesic if its arclength parametrization is in fact a geodesic.</p></blockquote>
 <p>I explained what I &ldquo;discovered&rdquo; to Claude, and it nicely summarized everything:</p>
@@ -349,7 +349,7 @@ under my guidance, ChatGPT 4o verified my calculations and the issue:</p>
     <img src="claude10.png" alt="Diagram" style="width:80%;" />
 </p>
 <p>It is amazing to me how working out a simple proof led to a journey of discovering a missing part in my knowledge, which in the end also deepened my understanding of the relationship between geodesics and parallel transport. The fact that the constant speed condition emerges naturally from the parallel transport requirement really ties everything together elegantly.</p>
-<p>What&rsquo;s more amazing to me is the role of LLMs. ChatGPT 4o did mention arclength parametrization at first, but it didn&rsquo;t show this was the key to the puzzle, and instead gave me some hand-waving explanations. Claude failed to provide the answer too, and got the same confusion as I did, but still played the role of a &ldquo;math buddy&rdquo; exploring the problem with me. It noticed the algebraic connection of the equation to constant speed, which eventually became our &ldquo;eureka!&rdquo; moment. This experience of collaborative exploration brought more dopamine than the answer itself. Of course, if I had used ChatGPT o4-mini in the first place, I might have saved a few hours, but I think it would have been way less fun.</p>
+<p>What&rsquo;s more amazing to me is the role of LLMs. ChatGPT 4o did mention arclength parametrization at first, but it didn&rsquo;t show this was the key to the puzzle, and instead gave me some hand-waving explanations. Claude failed to provide the answer too, and got the same confusion as I did, but still played the role of a &ldquo;math buddy&rdquo; exploring the problem with me. It noticed the algebraic connection of the equation to constant speed, which eventually became our &ldquo;eureka!&rdquo; moment. This experience of collaborative exploration brought more satisfaction than the answer itself. Of course, if I had used ChatGPT o4-mini in the first place, I might have saved a few hours, but I think it would have been way less fun.</p>
 
       </div>
 
