@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <title>
   Geodesics via the Calculus of Variations · Yan Zhang
 </title>
@@ -13,31 +13,32 @@
 
 
 <meta name="author" content="Yan Zhang">
-<meta name="description" content="When I explain geodesics to people, I usually use two intuitions:
+<meta name="description" content="TL;DR:
 
-Geodesics are the &ldquo;straight lines&rdquo; on curved surfaces, and;
-Geodesics minimize distances between two points on curved surfaces.
+This post shows how the calculus of variations connects two definitions of geodesics: as “straight lines” (parallel transport) and as distance-minimizing curves.
+By applying the Euler-Lagrange equation to both the energy and length functionals, we see that minimizing energy requires constant-speed (affine) parametrization, while minimizing length is parametrization-invariant.
+The result: a curve is a geodesic if its covariant acceleration is parallel to its tangent vector, generalizing the definition beyond constant-speed parametrization.
 
-The definition I used in this post is basically a more precise version of the first intuition, using the tool of parallel transport to define what is considered &ldquo;straight&rdquo; on a curved surface. However, for people who study Lagrangian mechanics, a definition based on the second intuition might be more straightforward, as the geodesic is the path that minimizes the action, if we define the action as the Euclidean distance between points.">
+I usually explain geodesics to others based on two intuitions:">
 <meta name="keywords" content="">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Geodesics via the Calculus of Variations">
-  <meta name="twitter:description" content="When I explain geodesics to people, I usually use two intuitions:
-Geodesics are the “straight lines” on curved surfaces, and; Geodesics minimize distances between two points on curved surfaces. The definition I used in this post is basically a more precise version of the first intuition, using the tool of parallel transport to define what is considered “straight” on a curved surface. However, for people who study Lagrangian mechanics, a definition based on the second intuition might be more straightforward, as the geodesic is the path that minimizes the action, if we define the action as the Euclidean distance between points.">
+  <meta name="twitter:description" content="TL;DR:
+This post shows how the calculus of variations connects two definitions of geodesics: as “straight lines” (parallel transport) and as distance-minimizing curves. By applying the Euler-Lagrange equation to both the energy and length functionals, we see that minimizing energy requires constant-speed (affine) parametrization, while minimizing length is parametrization-invariant. The result: a curve is a geodesic if its covariant acceleration is parallel to its tangent vector, generalizing the definition beyond constant-speed parametrization. I usually explain geodesics to others based on two intuitions:">
 
-<meta property="og:url" content="http://localhost:1313/posts/geodesics-via-calculus-of-variation/">
+<meta property="og:url" content="https://yaz62.github.io/posts/geodesics-via-calculus-of-variation/">
   <meta property="og:site_name" content="Yan Zhang">
   <meta property="og:title" content="Geodesics via the Calculus of Variations">
-  <meta property="og:description" content="When I explain geodesics to people, I usually use two intuitions:
-Geodesics are the “straight lines” on curved surfaces, and; Geodesics minimize distances between two points on curved surfaces. The definition I used in this post is basically a more precise version of the first intuition, using the tool of parallel transport to define what is considered “straight” on a curved surface. However, for people who study Lagrangian mechanics, a definition based on the second intuition might be more straightforward, as the geodesic is the path that minimizes the action, if we define the action as the Euclidean distance between points.">
+  <meta property="og:description" content="TL;DR:
+This post shows how the calculus of variations connects two definitions of geodesics: as “straight lines” (parallel transport) and as distance-minimizing curves. By applying the Euler-Lagrange equation to both the energy and length functionals, we see that minimizing energy requires constant-speed (affine) parametrization, while minimizing length is parametrization-invariant. The result: a curve is a geodesic if its covariant acceleration is parallel to its tangent vector, generalizing the definition beyond constant-speed parametrization. I usually explain geodesics to others based on two intuitions:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-07-09T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-09T15:18:52-07:00">
+    <meta property="article:modified_time" content="2025-08-04T17:59:23-07:00">
     <meta property="article:tag" content="Differential Geometry">
     <meta property="article:tag" content="Geodesic">
     <meta property="article:tag" content="Calculus of Variation">
@@ -46,7 +47,7 @@ Geodesics are the “straight lines” on curved surfaces, and; Geodesics minimi
 
 
 
-<link rel="canonical" href="http://localhost:1313/posts/geodesics-via-calculus-of-variation/">
+<link rel="canonical" href="https://yaz62.github.io/posts/geodesics-via-calculus-of-variation/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -56,7 +57,7 @@ Geodesics are the “straight lines” on curved surfaces, and; Geodesics minimi
 
   
   
-  <link rel="stylesheet" href="/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.min.6445a802b9389c9660e1b07b724dcf5718b1065ed2d71b4eeaf981cc7cc5fc46.css" integrity="sha256-ZEWoArk4nJZg4bB7ck3PVxixBl7S1xtO6vmBzHzF/EY=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -139,7 +140,7 @@ window.MathJax = {
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
+    <a class="navigation-title" href="https://yaz62.github.io/">
       Yan Zhang
     </a>
     
@@ -170,7 +171,7 @@ window.MathJax = {
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:1313/posts/geodesics-via-calculus-of-variation/">
+            <a class="title-link" href="https://yaz62.github.io/posts/geodesics-via-calculus-of-variation/">
               Geodesics via the Calculus of Variations
             </a>
           </h1>
@@ -185,7 +186,7 @@ window.MathJax = {
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              6-minute read
+              14-minute read
             </span>
           </div>
           
@@ -213,47 +214,190 @@ window.MathJax = {
 
       <div class="post-content">
         
-        <p>When I explain geodesics to people, I usually use two intuitions:</p>
+        <p><strong>TL;DR:</strong></p>
 <ul>
-<li>Geodesics are the &ldquo;straight lines&rdquo; on curved surfaces, and;</li>
+<li>This post shows how the calculus of variations connects two definitions of geodesics: as “straight lines” (parallel transport) and as distance-minimizing curves.</li>
+<li>By applying the Euler-Lagrange equation to both the energy and length functionals, we see that minimizing energy requires constant-speed (affine) parametrization, while minimizing length is parametrization-invariant.</li>
+<li>The result: a curve is a geodesic if its covariant acceleration is parallel to its tangent vector, generalizing the definition beyond constant-speed parametrization.</li>
+</ul>
+<p>I usually explain geodesics to others based on two intuitions:</p>
+<ul>
+<li>Geodesics are the &ldquo;straight lines&rdquo; on curved surfaces;</li>
 <li>Geodesics minimize distances between two points on curved surfaces.</li>
 </ul>
-<p>The <strong>definition</strong> I used in <a href="https://yaz62.github.io/posts/prove-meridians-are-geodesics/"  class="external-link" target="_blank" rel="noopener">this post</a> is basically a more precise version of the first intuition, using the tool of parallel transport to define what is considered &ldquo;straight&rdquo; on a curved surface. However, for people who study Lagrangian mechanics, a definition based on the second intuition might be more straightforward, as the geodesic is the path that minimizes the action, if we define the action as the Euclidean distance between points.</p>
-<p>Consider two points $P$ and $Q$ on a curved space $x$, connected by a curve $\alpha$. A particle moves from $P$ to $Q$ at speed $\lVert\alpha^\prime\rVert$, taking time $T$. The distance functional is defined as the following integral:
+<p>The <strong>definition</strong> I used in <a href="https://yaz62.github.io/posts/prove-meridians-are-geodesics/"  class="external-link" target="_blank" rel="noopener">this post</a> is basically a more precise version of the first intuition, using the tool of parallel transport to define what is considered &ldquo;straight&rdquo; on a curved surface. However, for people who study Lagrangian mechanics, a definition based on the second intuition might be more straightforward, as the geodesic is the path that minimizes the action, if we define the action as the distance on the curved surface between points. In this post, my goal is to bridge these two ideas about geodesics, by showing that a curve that minimizes the distance between two points is indeed straight on a curved surface.</p>
+<p>In this blog post, I&rsquo;ll use calculus of variations as the tool to find the distance-minimizing curve. The idea is simple: consider two fixed points $P$ and $Q$ on a curved space $x$, connected by a curve $\alpha$. A particle moves from $P$ to $Q$ at speed $\lVert\alpha^\prime\rVert$, taking time $T$. The goal is to find the optimal curve $\alpha^*$ that minimizes the distance functional, which is defined by the following integral:
 $$
-S[\alpha] = \int_0^T \lVert\alpha^\prime(t)\rVert \mathrm dt = \int_0^T \sqrt{\alpha^\prime(t) \cdot \alpha^\prime(t)} \mathrm dt
-$$</p>
-<p>To make things easier, instead of optimizing the distance functional, I used the following energy functional:
+\mathcal{S}[\alpha] = \int_0^T \lVert\alpha^\prime(t)\rVert \mathrm dt = \int_0^T \sqrt{\alpha^\prime(t) \cdot \alpha^\prime(t)} \mathrm dt
 $$
-E[\alpha] = \int_0^T \lVert\alpha^\prime(t)\rVert^2 \mathrm dt = \int_0^T \alpha^\prime(t) \cdot \alpha^\prime(t) \mathrm dt
+Then, if we introduce small variations $\delta \alpha$ to the curve, the distance function will also be perturbed: $\mathcal{S}[\alpha + \delta \alpha] = \mathcal{S} + \delta \mathcal{S}$. Here&rsquo;s a diagram of how calculus of variation work:</p>
+<figure>
+  <img src="diagram_calculus_of_variation.png" alt="Diagram" width="500">
+</figure>
+<p>As shown in this diagram, you can think of the introduced variations as moving all points of $\alpha^*$ across a small distance $\delta \alpha$. As a result, the distance functional increases as you move the points further and further away (the curves are colored to indicate the distances) from $\alpha^*$. Just like in regular calculus, the optimum is found when $\delta \mathcal{S}=0$.</p>
+<p>However, to make the post concise, I&rsquo;ll use the Euler-Lagrange equation as a shortcut to solve for the optimum. If you are interested to see the math orgies when we don&rsquo;t use the Euler-Lagrange equation, check out the <em>PS</em> at the end.</p>
+<p>To make things easier, instead of optimizing the distance functional, I&rsquo;ll use the following energy functional:
+$$
+\mathcal{E}[\alpha] = \int_0^T \lVert\alpha^\prime(t)\rVert^2 \mathrm dt = \int_0^T \alpha^\prime(t) \cdot \alpha^\prime(t) \mathrm dt
 $$</p>
-<p>Seemingly, this is just a mathematical trick to reduce the workload of applying the chain rule later, and minimizing the norm is equivalent as minimizing the squared. However, later we will see that this is not as innocent as it seems. Parametrize the curve with surface parameters $u$ and $v$, we have:
+<p>At first glance, this seems like a mathematical trick to reduce the workload of applying the chain rule later, since minimizing the norm is equivalent to minimizing the squared norm. However, as we will see later, this is not as innocent as it seems.
 $$
 \alpha(t) = x\big(u(t), v(t)\big)
 $$</p>
 <p>Now we can proceed to expand the energy functional:
 $$
 \begin{align*}
-E[\alpha] &amp;= \frac{1}{2}\int_0^T \alpha^\prime(t) \cdot \alpha^\prime(t) \mathrm dt \\[1.5ex]
+\mathcal{E}[\alpha] &amp;= \frac{1}{2}\int_0^T \alpha^\prime(t) \cdot \alpha^\prime(t) \mathrm dt \\[1.5ex]
 &amp;= \frac{1}{2}\int_0^T \frac{\mathrm d}{\mathrm dt}x\big(u(t), v(t)\big) \cdot \frac{\mathrm d}{\mathrm dt}x\big(u(t), v(t)\big) \mathrm dt \\[1.5ex]
 &amp;= \frac{1}{2}\int_0^T x^\prime\big(u, v, u^\prime, v^\prime\big) \cdot x^\prime\big(u, v, u^\prime, v^\prime\big) \mathrm dt
 \end{align*}
 $$</p>
-<p>It is essential to realize that $x^\prime$ is function of not only $u$ and $v$, but also $u^\prime$ and $v^\prime$. Explicitly:
+<p>It is essential to realize that $x^\prime$ is function not only of $u$ and $v$, but also of $u^\prime$ and $v^\prime$. Explicitly:
 $$
 x^\prime(u, v, u^\prime, v^\prime) = \frac{\mathrm d}{\mathrm dt}x(u, v) = u^\prime x_u + v^\prime x_v
 $$</p>
-<p>So, later when I introduce variations to the curve, this will not only result in the coordinates $[u(t), v(t)]$ of the curve, but also the tangent $[u^\prime(t), v^\prime(t)]$. Now if there&rsquo;s a small variation $\delta \alpha$ applied to the curve, the energy functional is perturbed:
+<p>So, when a small variation is introduced to the curve, this will not only result in the coordinates $[u(t), v(t)]$ of the curve, but also the tangent $[u^\prime(t), v^\prime(t)]$. Here are partial derivatives of $x^\prime$ that will be useful later:
 $$
 \begin{align*}
-E + \delta E &amp;= \frac{1}{2}\int_0^T (x^\prime+\delta x^\prime) \cdot (x^\prime+\delta x^\prime) \mathrm dt \\[1.5ex]
+\begin{cases}
+\displaystyle\ \frac{\partial x^\prime}{\partial u} = x_u^\prime = u^\prime x_{uu} + v^\prime x_{uv} \\[3ex]
+\displaystyle\ \frac{\partial x^\prime}{\partial v} = x_v^\prime = u^\prime x_{uv} + v^\prime x_{vv} \\[3ex]
+\displaystyle\ \frac{\partial x^\prime}{\partial u^\prime} = x_u \\[3ex]
+\displaystyle\ \frac{\partial x^\prime}{\partial v^\prime} = x_v
+\end{cases}
+\end{align*}
+$$
+The shortcut to solve the optimization of $\mathcal{E}$ is to use the Euler-Lagrange equation. Let $L_{\mathcal{E}}$ be the Lagrangian for the energy functional:
+$$
+L_{\mathcal{E}}\big(t, u, v, u^\prime, v^\prime\big) = \frac{1}{2} x^\prime\big(u, v, u^\prime, v^\prime\big) \cdot x^\prime\big(u, v, u^\prime, v^\prime\big)
+$$
+so that,
+$$
+\mathcal{E}[\alpha] = \int_0^T L_{\mathcal{E}} \mathrm dt
+$$
+Then the Euler-Lagrange equation that gives us the solution when $\alpha$ minimizes $\mathcal{E}$ is:
+$$
+\begin{align*}
+\begin{cases}
+\displaystyle\ \frac{\partial L_\mathcal{E}}{\partial u} - \frac{\mathrm d}{\mathrm dt}\frac{\partial L_\mathcal{E}}{\partial u^\prime} = 0 \\[3ex]
+\displaystyle\ \frac{\partial L_\mathcal{E}}{\partial v} - \frac{\mathrm d}{\mathrm dt}\frac{\partial L_\mathcal{E}}{\partial v^\prime} = 0
+\end{cases}
+\end{align*}
+$$</p>
+<p>Since the equations are symmetrical about $u$ and $v$, I&rsquo;ll only calculate the $u$ terms:
+$$
+\begin{align*}
+\frac{\partial L_\mathcal{E}}{\partial u} &amp;= \frac{1}{2} \frac{\partial}{\partial u}\big(x^\prime \cdot x^\prime\big) = x^\prime\cdot x_u^\prime \\[3ex]
+\frac{\mathrm d}{\mathrm dt}\frac{\partial L_\mathcal{E}}{\partial u^\prime} &amp;= \frac{1}{2}\frac{\mathrm d}{\mathrm dt}\frac{\partial}{\partial u^\prime} \big(x^\prime\cdot x^\prime\big) \\[1.5ex]
+&amp;= \frac{\mathrm d}{\mathrm dt} \big(x^\prime\cdot \frac{\partial x^\prime}{\partial u^\prime}\big) \\[1.5ex]
+&amp;= x^{\prime\prime}\cdot \frac{\partial x^\prime}{\partial u^\prime} + x^{\prime}\cdot \frac{\mathrm d}{\mathrm dt}\frac{\partial x^\prime}{\partial u^\prime} \\[1.5ex]
+&amp;= x^{\prime\prime}\cdot x_u + x^{\prime}\cdot x_u^\prime
+\end{align*}
+$$
+Combine together:
+$$
+\begin{align*}
+&amp;\begin{cases}
+\displaystyle\ \textcolor{red}{\cancel{\textcolor{black}{x^\prime \cdot x_u^\prime}}} - x^{\prime\prime}\cdot x_u - \textcolor{red}{\cancel{\textcolor{black}{x^\prime \cdot x_u^\prime}}} = 0 \\[3ex]
+\displaystyle\ \textcolor{red}{\cancel{\textcolor{black}{x^\prime \cdot x_v^\prime}}} - x^{\prime\prime}\cdot x_v - \textcolor{red}{\cancel{\textcolor{black}{x^\prime \cdot x_v^\prime}}} = 0
+\end{cases} \\[3ex]
+\Rightarrow &amp;\Big(D_{\alpha^\prime}\alpha^\prime\Big)^\parallel = 0 \\[1.5ex]
+\Rightarrow &amp;\nabla_{\alpha^\prime}\alpha^\prime = 0
+\end{align*}
+$$
+There it is: the definition that the geodesic is straight &ndash; the tangent vector doesn&rsquo;t change along the curve, i.e. $\nabla_{\alpha^\prime}\alpha^\prime = 0$ &ndash; is indeed mathematically equivalent to the notion that geodesics minimize distances (actually, energy) on surfaces. The requirement of affine (namely constant speed) parametrization is implied already, because otherwise there will be tangential acceleration and the covariant derivative won&rsquo;t be zero. It comes out naturally as we vary not only the shape of the curve ($u$ and $v$, and the direction of $[u^\prime, v^\prime]$), but also how fast a particle travels along the curve (magnitude of $[u^\prime, v^\prime]$). Furthermore, the dependence of the energy functional on speed can be explicitly shown like this: let $s$ be the arclength parameter,
+$$
+\begin{align*}
+\mathcal{E}[\alpha] &amp;= \frac{1}{2}\int_0^T \alpha^\prime \cdot \alpha^\prime \mathrm dt \\[1.5ex]
+&amp;= \frac{1}{2}\int_0^T \Big(s^\prime\frac{\mathrm d\alpha}{\mathrm ds}\Big) \cdot \Big(s^\prime\frac{\mathrm d\alpha}{\mathrm ds}\Big) \mathrm dt \\[1.5ex]
+&amp;= \frac{1}{2}\int_0^T s^\prime\Big(\frac{\mathrm d\alpha}{\mathrm ds}\Big) \cdot \Big(\frac{\mathrm d\alpha}{\mathrm ds}\Big) \mathrm ds \\[1.5ex]
+\end{align*}
+$$
+So when varying the energy functional, the speed $s^\prime$ is also perturbed. Now the question is, what if I used the length functional instead, which is parametrization invariant? Explicitly,
+$$
+\begin{align*}
+\mathcal{S}[\alpha] &amp;= \int_0^T \lVert\alpha^\prime\rVert \mathrm dt = \int_0^T \sqrt{\alpha^\prime \cdot \alpha^\prime} \mathrm dt \\[1.5ex]
+&amp;= \int_0^T \sqrt{\Big(s^\prime\frac{\mathrm d\alpha}{\mathrm ds}\Big) \cdot \Big(s^\prime\frac{\mathrm d\alpha}{\mathrm ds}\Big)} \mathrm dt \\[1.5ex]
+&amp;= \int_0^T \sqrt{\Big(\frac{\mathrm d\alpha}{\mathrm ds}\Big) \cdot \Big(\frac{\mathrm d\alpha}{\mathrm ds}\Big)} \mathrm ds \\[1.5ex]
+\end{align*}
+$$
+which means that the length functional doesn&rsquo;t depend on speed (of course length is not a function of speed, duh)! Will we still recover $\nabla_{\alpha^\prime}\alpha^\prime = 0$ which requires constant speed if we use the length functional? Let&rsquo;s find out:
+$$
+\begin{align*}
+\mathcal{S}[\alpha] &amp;= \int_0^T \lVert\alpha^\prime\rVert \mathrm dt = \int_0^T \sqrt{\alpha^\prime(t) \cdot \alpha^\prime(t)} \mathrm dt \\[1.5ex]
+&amp;= \int_0^T \sqrt{x^\prime\big(u, v, u^\prime, v^\prime\big) \cdot x^\prime\big(u, v, u^\prime, v^\prime\big)} \mathrm dt \\[1.5ex]
+&amp;= \int_0^T L_{\mathcal S}\ \mathrm dt
+\end{align*}
+$$</p>
+<p>The Euler-Lagrange equation for the length functional is:
+$$
+\begin{align*}
+\begin{cases}
+\displaystyle\ \frac{\partial L_{\mathcal S}}{\partial u} - \frac{\mathrm d}{\mathrm dt}\frac{\partial L_{\mathcal S}}{\partial u^\prime} = 0 \\[3ex]
+\displaystyle\ \frac{\partial L_{\mathcal S}}{\partial v} - \frac{\mathrm d}{\mathrm dt}\frac{\partial L_{\mathcal S}}{\partial v^\prime} = 0
+\end{cases}
+\end{align*}
+$$</p>
+<p>Calculate each term in the Euler-Lagrange equation:
+$$
+\begin{align*}
+\frac{\partial L_{\mathcal S}}{\partial u} &amp;= \frac{1}{2\lVert x^\prime\rVert} \frac{\partial}{\partial u} \big(x^\prime\cdot x^\prime\big) = \frac{1}{\lVert x^\prime\rVert}\frac{\partial L_{\mathcal E}}{\partial u} \\[3ex]
+\frac{\mathrm d}{\mathrm dt}\frac{\partial L_{\mathcal S}}{\partial u^\prime} &amp;= \frac{\mathrm d}{\mathrm dt}\Big(\frac{1}{2\lVert x^\prime\rVert}\frac{\partial}{\partial u^\prime} \big( x^\prime\cdot x^\prime \big)\Big) =\frac{\mathrm d}{\mathrm dt}\Big( \frac{1}{\lVert x^\prime\rVert}\frac{\partial L_{\mathcal E}}{\partial u^\prime} \Big) \\[1.5ex]
+&amp;= \frac{1}{\lVert x^\prime\rVert}\frac{\mathrm d}{\mathrm dt}\frac{\partial L_{\mathcal E}}{\partial u^\prime} - \frac{x^\prime \cdot x^{\prime\prime}}{\lVert x^\prime\rVert^3}\frac{\partial L_{\mathcal E}}{\partial u^\prime}
+\end{align*}
+$$</p>
+<p>The Euler-Lagrange equation (showing only the $u$-equation) becomes:
+$$
+\begin{align*}
+&amp;\frac{\partial L_{\mathcal S}}{\partial u} - \frac{\mathrm d}{\mathrm dt}\frac{\partial L_{\mathcal S}}{\partial u^\prime} = 0 \\[3ex]
+\Rightarrow\ &amp; \frac{1}{\lVert x^\prime\rVert}\frac{\partial L_{\mathcal E}}{\partial u} - \frac{1}{\lVert x^\prime\rVert}\frac{\mathrm d}{\mathrm dt}\frac{\partial L_{\mathcal E}}{\partial u^\prime} + \frac{x^\prime \cdot x^{\prime\prime}}{\lVert x^\prime\rVert^3}\frac{\partial L_{\mathcal E}}{\partial u^\prime} = 0  \\[3ex]
+\Rightarrow\ &amp; \frac{\partial L_{\mathcal E}}{\partial u} - \frac{\mathrm d}{\mathrm dt}\frac{\partial L_{\mathcal E}}{\partial u^\prime} + \frac{x^\prime \cdot x^{\prime\prime}}{\lVert x^\prime\rVert^2}\frac{\partial L_{\mathcal E}}{\partial u^\prime} = 0
+\end{align*}
+$$</p>
+<p>Curiously, we recover a form that looks like the Euler-Lagrange equation for the energy functional, but with an additional term. Obviously we won&rsquo;t get the vanished covariant like before, and the only way to find out what the additional term entails is to substite the energy functional terms with what we&rsquo;ve calculated before:
+$$
+\begin{align*}
+\Rightarrow\ &amp;-x^{\prime\prime}\cdot x_u + \frac{x^\prime \cdot x^{\prime\prime}}{\lVert x^\prime\rVert^2}\big(x^\prime\cdot x_u \big) = 0 \\[3ex]
+\Rightarrow\ &amp; x^{\prime\prime}\cdot x_u = \frac{x^\prime \cdot x^{\prime\prime}}{\lVert x^\prime\rVert^2}\big(x^\prime\cdot x_u \big)
+\end{align*}
+$$
+Take together the result for the $v$-equation, and switch back to $\alpha$, we get:
+$$
+\nabla_{\alpha^\prime}\alpha^\prime = \frac{\alpha^\prime \cdot \alpha^{\prime\prime}}{\lVert \alpha^\prime\rVert^2}\big(\alpha^{\prime}\big)^\parallel
+$$
+Note that by definition $\alpha^\prime$ lives in the tangent space, so $\big(\alpha^{\prime}\big)^\parallel = \alpha^{\prime}$. To make things a bit clearer, I&rsquo;ll also denote the factor on the right hand side before the tangent vector as $f(t)$. Then:
+$$
+\nabla_{\alpha^\prime}\alpha^\prime = f(t)\alpha^{\prime}
+$$</p>
+<p>Now the picture is clear: the path that minimizes the length functional is the one where its covariant derivative (covariant acceleration or intrinsic acceleration?) is parallel to its tangent. This in my view is a generalized, parametrization-invariant definition of the geodesics:</p>
+<blockquote>
+<p><strong>Generalized Definition</strong> We say a parametrized curve $\alpha$ in a surface $M$ is a geodesic if when a particle travels along it, the particle&rsquo;s covariant acceleration is parallel to its tangent vector, i.e., if $\nabla_{\alpha^\prime}\alpha^\prime=f(t)\alpha^{\prime}$.</p></blockquote>
+<p>Based on this definition, $\alpha$ does not need to be affine-parametrized. The particle is allowed to pick up some acceleration while traveling down the geodesic, but the projection of the acceleration on the tangent space must not turn the direction of the tangent vector. This definition holds irrespective of how the particle moves along the curve, as long as the shape of the curve is unchanged. In the Darboux frame shown below, if the red curve is a geodesic, the green arrow should have zero length. The covariant acceleration can have the orange component based on the <strong>Generalized Definition</strong>, whereas in the original <strong>Definition</strong>, neither components is allowed.</p>
+<figure>
+  <img src="diagram.png" alt="Diagram" width="500">
+</figure>
+<h3 id="ps-the-promised-math-orgy">
+  P.S. The Promised Math Orgy
+  <a class="heading-link" href="#ps-the-promised-math-orgy">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The energy functional is:
+$$
+\mathcal{E}[\alpha] = \int_0^T \lVert\alpha^\prime(t)\rVert^2 \mathrm dt = \int_0^T \alpha^\prime(t) \cdot \alpha^\prime(t) \mathrm dt
+$$
+If there&rsquo;s a small variation $\delta \alpha$ applied to the curve, the energy functional is perturbed:
+$$
+\begin{align*}
+\mathcal{E} + \delta \mathcal{E} &amp;= \frac{1}{2}\int_0^T (x^\prime+\delta x^\prime) \cdot (x^\prime+\delta x^\prime) \mathrm dt \\[1.5ex]
 &amp;= \frac{1}{2}\int_0^T x^\prime\cdot x^\prime \mathrm dt + \int_0^T x^\prime \cdot \delta x^\prime \mathrm dt + O(\delta x^{\prime 2}) \\[1.5ex]
-&amp;= E + \int_0^T x^\prime \cdot \delta x^\prime \mathrm dt + O(\delta x^{\prime 2})
+&amp;= \mathcal{E} + \int_0^T x^\prime \cdot \delta x^\prime \mathrm dt + O(\delta x^{\prime 2})
 \end{align*}
 $$</p>
 <p>The higher order term $O(\delta x^{\prime 2})$ is omitted, which leads to:
 $$
-\delta E = \int_0^T x^\prime \cdot \delta x^\prime \mathrm dt
+\delta \mathcal{E} = \int_0^T x^\prime \cdot \delta x^\prime \mathrm dt
 $$</p>
 <p>$\delta x^\prime$ can be expanded the same way as the total differential, and as mentioned before, it&rsquo;s a function of $u$, $v$, $u^\prime$, and $v^\prime$:
 $$
@@ -265,7 +409,7 @@ $$</p>
 <p>Plug this back in the integral for the variation of the energy functional:
 $$
 \begin{align*}
-\delta E &amp;= \int_0^T \textcolor{blue}{x^\prime} \cdot \textcolor{red}{\delta x^\prime} \mathrm dt \\[1.5ex]
+\delta \mathcal{E} &amp;= \int_0^T \textcolor{blue}{x^\prime} \cdot \textcolor{red}{\delta x^\prime} \mathrm dt \\[1.5ex]
 &amp;= \int_0^T \textcolor{blue}{(u^\prime x_u + v^\prime x_v)} \cdot \textcolor{red}{\Big\{(u^\prime x_{uu} + v^\prime x_{uv}) \delta u + (u^\prime x_{uv} + v^\prime x_{vv}) \delta v + x_u \delta u^\prime + x_v \delta v^\prime\Big\}} \mathrm dt \\[1.5ex]
 &amp;= \int_0^T \mathrm dt\ \big(u^{\prime 2}x_u\cdot x_{uu} + u^\prime v^\prime x_u \cdot x_{uv} + u^\prime v^\prime x_v\cdot x_{uu} + v^{\prime 2}x_v\cdot x_{uv}\big)\delta u  \\[1.5ex]
 &amp;\ \ \ \ \ \ \ \ \ + \big(u^{\prime 2}x_u\cdot x_{uv} + u^\prime v^\prime x_u \cdot x_{vv} + u^\prime v^\prime x_v\cdot x_{uv} + v^{\prime 2}x_v\cdot x_{vv}\big)\delta v  \\[1.5ex]
@@ -319,11 +463,36 @@ $$</p>
 <p>Now, plug this back into the integral for $\delta E$ and cancel things out, we get:
 $$
 \begin{align*}
-\delta E &amp;= -\int_0^T \mathrm dt\ \big(u^{\prime\prime} E + v^{\prime\prime} F + u^{\prime 2}x_u\cdot x_{uu} + 2u^\prime v^\prime x_u\cdot x_{uv} + v^{\prime 2} x_u\cdot x_{vv}\big)\delta u  \\[1.5ex]
+\delta \mathcal{E} &amp;= -\int_0^T \mathrm dt\ \big(u^{\prime\prime} E + v^{\prime\prime} F + u^{\prime 2}x_u\cdot x_{uu} + 2u^\prime v^\prime x_u\cdot x_{uv} + v^{\prime 2} x_u\cdot x_{vv}\big)\delta u  \\[1.5ex]
 &amp;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ + \big(u^{\prime\prime} F + v^{\prime\prime} G + u^{\prime 2}x_v\cdot x_{uu} + 2u^\prime v^\prime x_v \cdot x_{uv} + v^{\prime 2}x_v\cdot x_{vv}\big)\delta v  \\[1.5ex]
-&amp;= -\int_0^T \mathrm dt\ \big(u^{\prime\prime} E + v^{\prime\prime} F + x_u \cdot (u^{\prime 2}x_{uu} + 2u^\prime v^\prime x_{uv} + v^{\prime 2} x_{vv})\big)\delta u  \\[1.5ex]
-&amp;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ + \big(u^{\prime\prime} F + v^{\prime\prime} G + x_v \cdot (u^{\prime 2}x_{uu} + 2u^\prime v^\prime x_{uv} + v^{\prime 2}x_{vv})\big)\delta v  \\[1.5ex]
+&amp;= -\int_0^T \mathrm dt\ (u^{\prime\prime} x_u + v^{\prime\prime} x_v + u^{\prime 2}x_{uu} + 2u^\prime v^\prime x_{uv} + v^{\prime 2} x_{vv}) \cdot x_u \ \delta u  \\[1.5ex]
+&amp;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ + (u^{\prime\prime} x_u + v^{\prime\prime} x_v + u^{\prime 2}x_{uu} + 2u^\prime v^\prime x_{uv} + v^{\prime 2}x_{vv})\cdot x_v\ \delta v  \\[1.5ex]
 \end{align*}
+$$</p>
+<p>To further simplify the expression, note that:
+$$
+\begin{align*}
+&amp; u^{\prime\prime} x_u + v^{\prime\prime} x_v + u^{\prime 2}x_{uu} + 2u^\prime v^\prime x_{uv} + v^{\prime 2}x_{vv}  \\[1.5ex]
+=\ &amp; u^{\prime\prime} x_u + v^{\prime\prime} x_v + u^\prime \big(u^\prime x_{uu} + v^\prime x_{uv}\big) + v^\prime\big(u^\prime x_{uv} + v^\prime x_{vv}\big)  \\[1.5ex]
+=\ &amp; u^{\prime\prime} x_u + v^{\prime\prime} x_v + u^\prime x_u^\prime + v^\prime x_v^\prime \\[1.5ex]
+=\ &amp; (u^\prime x_u + v^\prime x_v)^\prime \\[1.5ex]
+=\ &amp; x^{\prime\prime}
+\end{align*}
+$$</p>
+<p>So,
+$$
+\delta \mathcal{E} = -\int_0^T\ (x^{\prime\prime}\cdot x_u\delta u +  x^{\prime\prime}\cdot x_v\delta v)\ \mathrm dt
+$$</p>
+<p>As in any optimization problem, the minimum of $\mathcal{E}$ is found when the variation $\delta \mathcal{E}=0$. This leads to the following equations:
+$$
+\begin{cases}
+\ x^{\prime\prime}\cdot x_u = 0 \\
+\ x^{\prime\prime}\cdot x_v = 0
+\end{cases}
+$$</p>
+<p>Since $x_u$ and $x_v$ are the two (not necessarily orthogonal) basis vectors of the tangent plane, the above equations suggest that:
+$$
+\big(x^{\prime\prime}\big)^\parallel = \big(D_{\alpha^\prime}\alpha^\prime\big)^\parallel = \nabla_{\alpha^\prime}\alpha^\prime=0
 $$</p>
 
       </div>
@@ -383,7 +552,7 @@ $$</p>
 
   
   
-  <script src="/js/coder.js"></script>
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   
