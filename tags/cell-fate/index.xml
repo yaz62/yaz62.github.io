@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cell Fate on Yan Zhang</title>
+    <link>http://localhost:1313/tags/cell-fate/</link>
+    <description>Recent content in Cell Fate on Yan Zhang</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cell-fate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Cells Decide Their Fate, Part One</title>
+      <link>http://localhost:1313/posts/how-cells-decide-their-fate/</link>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/how-cells-decide-their-fate/</guid>
+      <description>&lt;p&gt;Cell fate has become a hot topic in stem cell research in recent years. Although the term has a philosophical tone, it really describes the outcome of a very specific biological process: how a stem cell develops into a terminal cell type&amp;ndash;namely, cell differentiation. Every student of cell differentiation eventually encounters a familiar image from Waddington&amp;rsquo;s 1957 seminal work, the epigenetic landscape:&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: center;&#34;&gt;&#xD;&#xA;    &lt;img src=&#34;waddington.png&#34; alt=&#34;Diagram&#34; style=&#34;width:40%;&#34; /&gt;&#xD;&#xA;&lt;/p&gt;&#xD;&#xA;&lt;p&gt;In this picture, differentiating cells are like marbles sliding down the valleys of a mountainous terrain. At each fork, a cell commits to one of several possible branches. Eventually, as the marble settles into a basin, the process of differentiation—from a stem cell to a terminal cell type—is complete, and the cell&amp;rsquo;s fate is determined.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

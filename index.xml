@@ -2,24 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yan Zhang</title>
-    <link>https://yaz62.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Yan Zhang</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Aug 2025 09:04:25 -0700</lastBuildDate>
-    <atom:link href="https://yaz62.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Cells Decide Their Fate, Part One</title>
+      <link>http://localhost:1313/posts/how-cells-decide-their-fate/</link>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/how-cells-decide-their-fate/</guid>
+      <description>&lt;p&gt;Cell fate has become a hot topic in stem cell research in recent years. Although the term has a philosophical tone, it really describes the outcome of a very specific biological process: how a stem cell develops into a terminal cell type&amp;ndash;namely, cell differentiation. Every student of cell differentiation eventually encounters a familiar image from Waddington&amp;rsquo;s 1957 seminal work, the epigenetic landscape:&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: center;&#34;&gt;&#xD;&#xA;    &lt;img src=&#34;waddington.png&#34; alt=&#34;Diagram&#34; style=&#34;width:40%;&#34; /&gt;&#xD;&#xA;&lt;/p&gt;&#xD;&#xA;&lt;p&gt;In this picture, differentiating cells are like marbles sliding down the valleys of a mountainous terrain. At each fork, a cell commits to one of several possible branches. Eventually, as the marble settles into a basin, the process of differentiation—from a stem cell to a terminal cell type—is complete, and the cell&amp;rsquo;s fate is determined.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Geodesics via the Calculus of Variations</title>
-      <link>https://yaz62.github.io/posts/geodesics-via-calculus-of-variation/</link>
+      <link>http://localhost:1313/posts/geodesics-via-calculus-of-variation/</link>
       <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://yaz62.github.io/posts/geodesics-via-calculus-of-variation/</guid>
+      <guid>http://localhost:1313/posts/geodesics-via-calculus-of-variation/</guid>
       <description>&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;This post shows how the calculus of variations connects two definitions of geodesics: as “straight lines” (parallel transport) and as distance-minimizing curves.&lt;/li&gt;&#xA;&lt;li&gt;By applying the Euler-Lagrange equation to both the energy and length functionals, we see that minimizing energy requires constant-speed (affine) parametrization, while minimizing length is parametrization-invariant.&lt;/li&gt;&#xA;&lt;li&gt;The result: a curve is a geodesic if its covariant acceleration is parallel to its tangent vector, generalizing the definition beyond constant-speed parametrization.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I usually explain geodesics to others based on two intuitions:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Prove That Meridians Are Geodesics With LLMs</title>
-      <link>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</link>
+      <link>http://localhost:1313/posts/prove-meridians-are-geodesics/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://yaz62.github.io/posts/prove-meridians-are-geodesics/</guid>
+      <guid>http://localhost:1313/posts/prove-meridians-are-geodesics/</guid>
       <description>&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I tried to prove that meridians on a surface of revolution are always geodesics, but my calculations suggested otherwise unless a certain condition was met.&lt;/li&gt;&#xA;&lt;li&gt;I consulted ChatGPT and Claude; both initially gave confusing or circular reasoning, but Claude provided a clue that led me to the answer.&lt;/li&gt;&#xA;&lt;li&gt;The key insight: the geodesic equation requires the curve to be parametrized with constant speed (affine parametrization).&lt;/li&gt;&#xA;&lt;li&gt;Parallel transport preserves the length of the tangent vector, so the tangent must have constant speed along a geodesic.&lt;/li&gt;&#xA;&lt;li&gt;The collaborative exploration with LLMs brought more satisfaction than just getting the answer directly.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve learned bits of differential geometry over the years, and I always use Theodore Shifrin&amp;rsquo;s notes, &lt;em&gt;Differential Geometry: A First Course in Curves and Surfaces&lt;/em&gt;, as my textbook. Recently, I decided to pick it back up just for fun.&lt;/p&gt;</description>
     </item>
   </channel>
